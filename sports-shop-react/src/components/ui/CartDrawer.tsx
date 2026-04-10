@@ -25,8 +25,6 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({ isOpen, onClose }) => {
     };
   }, [isOpen]);
 
-  const total = getCartTotal();
-
   const handleCheckout = () => {
     onClose();
     navigate('/cart');
@@ -83,10 +81,6 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({ isOpen, onClose }) => {
                   <h3 className="font-bold text-primary line-clamp-1">{item.product.name}</h3>
                   <p className="text-sm text-gray-500 mb-2">{item.product.category}</p>
                   <div className="flex items-center justify-between">
-                    <span className="font-heading font-bold text-secondary">
-                      ₦{item.product.price.toLocaleString()}
-                    </span>
-                    
                     <div className="flex items-center gap-2 bg-gray-50 rounded-lg p-1">
                       <button 
                         onClick={() => updateQuantity(item.product.id, item.quantity - 1)}
@@ -120,7 +114,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({ isOpen, onClose }) => {
           <div className="p-4 border-t border-gray-100 bg-gray-50">
             <div className="grid gap-3">
               <Button onClick={handleCheckout} className="w-full py-3">
-                Proceed to Checkout
+                View Cart / Message Admin
               </Button>
               <Button onClick={onClose} variant="ghost" className="w-full">
                 Continue Shopping

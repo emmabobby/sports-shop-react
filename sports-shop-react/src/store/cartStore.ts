@@ -15,7 +15,6 @@ interface CartState {
   updateQuantity: (productId: string, quantity: number) => void;
   toggleFavorite: (productId: string) => void;
   clearCart: () => void;
-  getCartTotal: () => number;
   getCartCount: () => number;
 }
 
@@ -62,9 +61,6 @@ export const useCartStore = create<CartState>()(
         }
       },
       clearCart: () => set({ cart: [] }),
-      getCartTotal: () => {
-        return get().cart.reduce((total, item) => total + item.product.price * item.quantity, 0);
-      },
       getCartCount: () => {
         return get().cart.reduce((count, item) => count + item.quantity, 0);
       },

@@ -7,6 +7,7 @@ import { ProductDetails } from './pages/ProductDetails';
 import { About } from './pages/About';
 import { Contact } from './pages/Contact';
 import { Cart } from './pages/Cart';
+import { NewProducts } from './pages/new_products/NewProducts';
 import ScrollToTop from './components/common/ScrollToTop';
 import { MessageCircle } from 'lucide-react';
 
@@ -19,6 +20,7 @@ function App() {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/new-products" element={<NewProducts />} />
             <Route path="/products" element={<Products />} />
             <Route path="/products/:id" element={<ProductDetails />} />
             <Route path="/about" element={<About />} />

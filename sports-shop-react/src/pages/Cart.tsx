@@ -5,19 +5,17 @@ import { Link } from 'react-router-dom';
 import { Trash2, Plus, Minus, ArrowRight, MessageCircle } from 'lucide-react';
 
 export const Cart: React.FC = () => {
-  const { cart, removeFromCart, updateQuantity, getCartTotal, clearCart } = useCartStore();
-  const total = getCartTotal();
+  const { cart, removeFromCart, updateQuantity, clearCart } = useCartStore();
 
   const handleWhatsAppCheckout = () => {
     const phoneNumber = "2348036340388"; // Replace with real number
-    let message = "Hello Chayoma Fitness Hub, I would like to place an order:\n\n";
+    let message = "Hello Chayoma Fitness Hub, I would like to order these items. Please send the prices and confirm availability:\n\n";
     
     cart.forEach(item => {
-      message += `- ${item.product.name} (x${item.quantity}) - ₦${(item.product.price * item.quantity).toLocaleString()}\n`;
+      message += `- ${item.product.name} (x${item.quantity})\n`;
     });
     
-    message += `\nTotal: ₦${total.toLocaleString()}`;
-    message += "\n\nPlease confirm availability and delivery details.";
+    message += "\n\nPlease confirm delivery details for Lagos.";
 
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
@@ -86,12 +84,6 @@ export const Cart: React.FC = () => {
                           <Plus className="w-4 h-4" />
                         </button>
                       </div>
-                      <div className="text-right">
-                        <span className="block text-sm text-gray-500">Unit: ₦{item.product.price.toLocaleString()}</span>
-                        <span className="text-xl font-heading font-bold text-secondary">
-                          ₦{(item.product.price * item.quantity).toLocaleString()}
-                        </span>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -120,7 +112,7 @@ export const Cart: React.FC = () => {
                 </div>
                 <div className="flex justify-between text-gray-600">
                   <span>Shipping</span>
-                  <span className="text-sm text-gray-400">Calculated at checkout</span>
+                  <span className="text-sm text-gray-400">Confirm on WhatsApp</span>
                 </div>
               </div>
 
@@ -129,11 +121,11 @@ export const Cart: React.FC = () => {
                 className="w-full py-4 text-lg bg-green-600 hover:bg-green-700 text-white flex items-center justify-center gap-2"
               >
                 <MessageCircle className="w-5 h-5" />
-                Checkout via WhatsApp
+                Message Admin on WhatsApp
               </Button>
               
               <p className="text-xs text-center text-gray-400 mt-4">
-                Secure checkout powered by WhatsApp Business. No payment required on site.
+                Prices and payment are confirmed on WhatsApp. No payment required on site.
               </p>
             </div>
           </div>

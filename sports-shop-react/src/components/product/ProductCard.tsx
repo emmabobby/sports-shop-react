@@ -83,7 +83,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onQuickView }
         </div>
 
         <a 
-          href={`https://wa.me/2348036340388?text=${encodeURIComponent(`Interested in ${product.name}`)}`} 
+          href={`https://wa.me/2348036340388?text=${encodeURIComponent(`Hello Chayoma Fitness Hub, I am interested in ${product.name}. Please send the price and confirm availability.`)}`} 
           target="_blank" 
           rel="noopener noreferrer" 
           className="mt-3 block w-full bg-green-600 text-white text-center py-2 rounded hover:bg-green-700 font-bold uppercase tracking-wide shadow-md hover:shadow-lg transition-all" 
