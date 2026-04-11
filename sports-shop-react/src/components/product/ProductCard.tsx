@@ -62,7 +62,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onQuickView }
           {product.category}
         </div>
         <Link to={`/products/${product.id}`} className="block">
-          <h3 className="text-xl font-bold text-primary mb-1 line-clamp-2 group-hover:text-secondary transition-colors tracking-tight">
+          <h3 className="text-xl font-bold text-primary mb-1 line-clamp-2 break-words leading-snug max-h-[3.2rem] overflow-hidden group-hover:text-secondary transition-colors tracking-tight">
             {product.name}
           </h3>
         </Link>
