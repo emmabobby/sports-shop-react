@@ -25,7 +25,8 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({ isOpen, onClose }) => {
     };
   }, [isOpen]);
 
-  const total = getCartTotal();
+ const { getCartTotal } = useCartStore();
+const total = getCartTotal();
 
   const handleCheckout = () => {
     onClose();
