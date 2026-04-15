@@ -62,7 +62,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onQuickView }
           {product.category}
         </div>
         <Link to={`/products/${product.id}`} className="block">
-          <h3 className="text-xl font-bold text-primary mb-1 line-clamp-2 group-hover:text-secondary transition-colors tracking-tight">
+          <h3 className="text-xl font-bold text-primary mb-1 line-clamp-2 break-words leading-snug max-h-[3.2rem] overflow-hidden group-hover:text-secondary transition-colors tracking-tight">
             {product.name}
           </h3>
         </Link>
@@ -83,7 +83,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onQuickView }
         </div>
 
         <a 
-          href={`https://wa.me/2348036340388?text=${encodeURIComponent(`Interested in ${product.name}`)}`} 
+          href={`https://wa.me/2348036340388?text=${encodeURIComponent(`Hello Chayoma Fitness Hub, I am interested in ${product.name}. Please send the price and confirm availability.`)}`} 
           target="_blank" 
           rel="noopener noreferrer" 
           className="mt-3 block w-full bg-green-600 text-white text-center py-2 rounded hover:bg-green-700 font-bold uppercase tracking-wide shadow-md hover:shadow-lg transition-all" 
